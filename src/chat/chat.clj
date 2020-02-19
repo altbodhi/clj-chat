@@ -6,6 +6,7 @@
 (def usrs (atom {}))
 
 (defn add-usr [ch us]
+  (println (str "add user : " us))
   (swap! usrs assoc ch us))
 
 (defn rm-usr [ch]
