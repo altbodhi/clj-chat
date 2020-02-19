@@ -54,6 +54,7 @@
 (def app
   (wrap-defaults app-routes site-defaults))
 
-(def stop
-  (ohs/run-server #'app {:port 9999}))
+(defn start
+  ([] (start 9999))
+  ([port] (ohs/run-server #'app {:port (or port)})))
 

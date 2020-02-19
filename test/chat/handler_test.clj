@@ -12,3 +12,14 @@
   (testing "not-found route"
     (let [response (app (mock/request :get "/invalid"))]
       (is (= (:status response) 404)))))
+
+
+(defn get-port
+  [& args]
+  (count args))
+  ;(if (empty? args) 9999
+   ;   (java.lang.Integer/parseInt (first args))))
+
+(get-port #{ 1  2 3  4})
+
+
